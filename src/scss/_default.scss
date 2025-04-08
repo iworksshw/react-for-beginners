@@ -1,0 +1,56 @@
+/* 기존에 사용하던 css에서 수정해야 할 필요가 있는 부분 */
+body {
+    overflow: auto;
+}
+body.header-fixed-space {
+    padding-top: 100px;
+}
+
+@include media("tablet") {
+    .wrapper {
+        padding-top: 0;
+    }
+}
+@include media("mobile") {
+    body.header-fixed-space {
+        padding-top: 64;
+    }
+    .wrapper {
+        padding-top: 0;
+    }
+}
+
+html, body{ /* 텍스트 커지는 이슈 (필수로 들어가야 하는 부분) */
+    -webkit-text-size-adjust : none;  /* 크롬, 사파리, 오페라 신버전 */
+    -ms-text-size-adjust : none;  /* IE */
+    -moz-text-size-adjust : none;  /* 파이어폭스 */
+    -o-text-size-adjust : none;  /* 오페라 구버전 */
+    font-family: 'PretendardGOV','Noto Sans KR',"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+table caption {
+    width: 1px; height: 1px; position: fixed; overflow: hidden; left: -9999px; top: -9999px; opacity: 0.01;
+}
+button {cursor: pointer;}
+
+*[class*=cpt] {
+    * {box-sizing: border-box; margin:0;padding:0; list-style:none; word-break: keep-all;}
+    button {border: 0;}
+    a, a:hover, a:visited {
+        text-decoration: none;
+    }
+} 
+
+.pcView {
+    display: block;
+    @include media("mobile") {
+        display: none;
+    }
+}
+
+/* 서브메뉴 기존 부분 수정 */
+.map_wrap {
+    margin-top: 100px;
+    @include media("mobile") {
+        margin-top: 60px;
+    }
+}

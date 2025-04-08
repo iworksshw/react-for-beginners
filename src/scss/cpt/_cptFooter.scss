@@ -1,0 +1,94 @@
+.cptFooter {
+    width: 100%; margin-top: 140px; background: #F4F4F4;
+    .footerArea {
+        width: 100%; max-width: 1320px; padding: 80px 60px 60px; margin: 0 auto;
+        .logoArea {
+            width: 100%; display: flex; justify-content: space-between; align-items: center;
+            .logoBox {width: max-content;}
+            .quickBox {
+                .menuItem {
+                    .menuName {
+                        color: #767676; font-size: 14px; font-style: normal; font-weight: 400; line-height: normal; text-decoration-line: underline; text-underline-position: under;
+                    }
+                }
+            }
+        }
+        .copyArea {
+            width: 100%; display: flex; justify-content: space-between; align-items: center; margin-top: 40px;
+            .copyGroup {
+                width: max-content;
+                .infoBox {
+                    span {margin-right: 10px; color: #767676; font-size: 14px; font-weight: 400; line-height: 1.6;}
+                }
+                .copyright {
+                    margin-top: 16px; color: #767676; font-size: 13px; font-weight: 400; line-height: 1.35;
+                }
+            }
+            .bnGroup {
+                width: 380px;
+            }
+        }
+        .quickArea {
+            width: 100%; margin-top: 40px; padding-top: 40px; border-top: 1px solid #DEDEDE;
+            .menuGroup {
+                width: max-content; display: flex;;
+                .menuItem {
+                    padding-left: 33px; position: relative;
+                    &::before {content:""; width: 1px; height: 10px; background: #767676; display: block; position: absolute; left: 16px; top: 8px;}
+                    &:first-child {
+                        padding-left: 0;
+                        &::before {display: none;}
+                    }
+                    .menuName {color: #767676; font-size: 16px; font-weight: 400; line-height: normal;}
+                }
+            }
+        }
+
+    }
+    @include media("tablet") {
+        .footerArea {
+            padding: 60px 20px 60px;
+            .copyArea {
+                .bnGroup {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include media("mobile") {
+        .footerArea {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            .logoArea {
+                width: 100%; flex-wrap: wrap; flex-direction: column;
+                .logoBox {width: 168px; height: auto;}
+                img {width: 100%; display: block;}
+                .quickBox {margin-top: 12px;}
+            }
+            .copyArea {
+                margin-top: 24px; display: flex; justify-content: center;
+                .copyGroup {
+                    .infoBox {
+                        text-align: center;
+                        span {
+                            color: #666666; font-size: 13px;
+                            &:last-child {margin-right: 0;}
+                        }
+                    }
+                    .copyright {
+                        margin-top: 12px; color: #666666; font-size: 12px; text-align: center;
+                    }
+                }
+            }
+            .quickArea {
+                margin-top: 24px; padding-top: 24px; display: flex; justify-content: center;
+                .menuGroup {
+                    .menuItem {
+                        .menuName {font-size: 14px;}
+                    }
+                }
+            }
+    
+        }
+
+    }
+}
